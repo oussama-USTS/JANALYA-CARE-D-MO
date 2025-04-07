@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  janalya-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: janalya-web
+    restart: unless-stopped
+    ports:
+      - "80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./dist:/usr/share/nginx/html:ro
+      - ./assets:/usr/share/nginx/html/assets:ro
+    networks:
+      - janalya-network
+
+networks:
+  janalya-network:
+    driver: bridge 

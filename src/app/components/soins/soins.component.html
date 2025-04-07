@@ -1,0 +1,68 @@
+<div class="soins-container">
+  <!-- Hero Section -->
+  <section class="soins-hero">
+    <h1>Nos Soins</h1>
+    <p class="subtitle">Des solutions innovantes pour votre bien-être</p>
+  </section>
+
+  <!-- Categories Filter -->
+  <section class="categories-filter">
+    <div class="filter-buttons">
+      <button 
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category"
+        (click)="filterByCategory(category)"
+        class="filter-btn">
+        {{ category }}
+      </button>
+    </div>
+  </section>
+
+  <!-- Soins Grid -->
+  <section class="soins-grid">
+    <div class="soin-card" *ngFor="let soin of filteredSoins">
+      <div class="card-image" [style.background-image]="'url(' + soin.image + ')'">
+        <div class="category-tag">{{ soin.category }}</div>
+      </div>
+      <div class="card-content">
+        <div class="icon-container">
+          <i [class]="soin.icon"></i>
+        </div>
+        <h3>{{ soin.title }}</h3>
+        <p class="description">{{ soin.description }}</p>
+        <div class="duration">
+          <i class="far fa-clock"></i>
+          <span>{{ soin.duration }}</span>
+        </div>
+        <ul class="benefits">
+          <li *ngFor="let benefit of soin.benefits">
+            <i class="fas fa-check"></i>
+            {{ benefit }}
+          </li>
+        </ul>
+        <a href="#contact" class="btn-primary">
+          <i class="fas fa-calendar-alt"></i>
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Banner -->
+  <section class="contact-banner">
+    <div class="banner-content">
+      <h2>Envie d'en savoir plus ?</h2>
+      <p>Nos experts sont là pour vous conseiller et répondre à toutes vos questions</p>
+      <div class="banner-buttons">
+        <a href="#contact" class="btn-primary">
+          <i class="fas fa-calendar-alt"></i>
+          Prendre RDV
+        </a>
+        <a href="tel:0123456789" class="btn-secondary">
+          <i class="fas fa-phone"></i>
+          Nous appeler
+        </a>
+      </div>
+    </div>
+  </section>
+</div> 

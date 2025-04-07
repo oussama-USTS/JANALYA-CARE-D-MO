@@ -1,59 +1,74 @@
-# JanalyaCare
+# JANALYA CARE
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Application web moderne pour un centre de soins esthétiques, développée avec Angular 17.
 
-## Development server
+## Technologies utilisées
 
-To start a local development server, run:
+- Angular 17
+- SCSS
+- Docker
+- Nginx
 
-```bash
-ng serve
-```
+## Fonctionnalités
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Page d'accueil moderne et responsive
+- Catalogue des soins
+- Témoignages clients
+- Système de réservation
+- Design élégant et professionnel
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Développement local
 
 ```bash
-ng build
+# Cloner le repository
+git clone git@github.com:oussama-USTS/JANALYA-CARE-D-MO.git
+cd janalya-care
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Production avec Docker
 
 ```bash
-ng test
+# Construire l'image
+docker-compose build
+
+# Lancer l'application
+docker-compose up -d
 ```
 
-## Running end-to-end tests
+L'application sera accessible sur `http://localhost:80`
 
-For end-to-end (e2e) testing, run:
+## Structure du projet
 
-```bash
-ng e2e
+```
+janalya-care/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   ├── services/
+│   │   └── shared/
+│   ├── assets/
+│   └── styles/
+├── Dockerfile
+├── docker-compose.yml
+└── nginx.conf
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Contribution
 
-## Additional Resources
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+
+Ce projet est sous licence MIT.
